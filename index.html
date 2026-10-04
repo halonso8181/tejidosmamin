@@ -21,7 +21,9 @@ body{font-family:Arial,sans-serif;background:#fdf6f0;margin:0;color:#6d4c41}
 .model-card{background:white;border-radius:8px;overflow:hidden;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.06);padding-bottom:10px}
 .model-open{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
 .model-card img{width:100%;height:220px;object-fit:cover;background:#f5eee8}
+.model-card img[src$="catalogo-aretes-tejidos-a-mano.png"]{object-fit:contain}
 .model-name{display:block;padding:12px 8px 4px;font-weight:700}
+.model-description{margin:0;padding:0 12px 14px;font-size:14px;line-height:1.45}
 .gallery-empty{grid-column:1/-1;text-align:center;padding:28px 12px;background:#fff;border-radius:8px}
 .gallery-status{text-align:center;min-height:1.5em}
 .viewer{width:min(92vw,850px);max-height:92vh;padding:18px;border:0;border-radius:8px;color:#6d4c41;background:#fff8f4}
@@ -38,7 +40,7 @@ input,select,textarea{width:90%;max-width:380px;padding:11px;margin:6px 0;border
 </head>
 <body>
 
-<div class="header"><b>🧶 Tejidos Mamin</b><nav class="category-nav" aria-label="Categorías"><a href="#productos" data-category="chaquetas">CHAQUETAS</a><a href="#productos" data-category="cuellos">CUELLOS</a><a href="#productos" data-category="chalecos">CHALECOS</a><a href="#productos" data-category="gorros">GORROS</a><a href="#productos" data-category="libros-pdf">LIBROS PDF</a><a href="#productos" data-category="patrones-pdf">PATRONES PDF</a></nav><b>979753574</b></div>
+<div class="header"><b>🧶 Tejidos Mamin</b><nav class="category-nav" aria-label="Categorías"><a href="#productos" data-category="chaquetas">CHAQUETAS</a><a href="#productos" data-category="cuellos">CUELLOS</a><a href="#productos" data-category="chalecos">CHALECOS</a><a href="#productos" data-category="gorros">GORROS</a><a href="#productos" data-category="libros-pdf">LIBROS PDF</a><a href="#productos" data-category="patrones-pdf">PATRONES PDF</a><a href="#productos" data-category="chompas">CHOMPAS</a><a href="#productos" data-category="sombreritos">SOMBRERITOS</a><a href="#productos" data-category="aretes">ARETES</a></nav><b>979753574</b></div>
 
 <div class="hero">
 <div>
@@ -58,6 +60,9 @@ input,select,textarea{width:90%;max-width:380px;padding:11px;margin:6px 0;border
 <div class="card"><b>GORROS</b><br><a href="#productos" data-category="gorros">Ver modelos →</a></div>
 <div class="card"><b>LIBROS EN PDF</b><br><a href="#productos" data-category="libros-pdf">Ver modelos →</a></div>
 <div class="card"><b>PATRONES EN PDF</b><br><a href="#productos" data-category="patrones-pdf">Ver modelos →</a></div>
+<div class="card"><b>CHOMPAS</b><br><small>Prendas tejidas para abrigar y vestir</small><br><a href="#productos" data-category="chompas">Ver modelos →</a></div>
+<div class="card"><b>SOMBRERITOS</b><br><small>Detalles decorativos tejidos a mano</small><br><a href="#productos" data-category="sombreritos">Ver modelos →</a></div>
+<div class="card"><b>ARETES</b><br><small>Accesorios tejidos a mano</small><br><a href="#productos" data-category="aretes">Ver modelos →</a></div>
 </div>
 
 <section id="productos" class="gallery-section" aria-labelledby="gallery-title">
@@ -72,6 +77,7 @@ input,select,textarea{width:90%;max-width:380px;padding:11px;margin:6px 0;border
 <button id="viewer-close" class="viewer-close" type="button" aria-label="Cerrar">×</button>
 <img id="viewer-image" alt="Sueter abotonado de medio lado" src="https://www.tejidosmiqueitas.com/wp-content/uploads/2020/09/22.-Abotonado-de-medio-lado-baja-ok-500x600.jpg">
 <h3 id="viewer-title">Sueter abotonado de medio lado</h3>
+<p id="viewer-description" class="model-description"></p>
 <a id="viewer-order" class="btn" target="_blank" rel="noopener" href="https://wa.me/51979753574?text=Hola%2C%20quisiera%20consultar%20por%20el%20tejido%3A%20Sueter%20abotonado%20de%20medio%20lado">Pedir este modelo por WhatsApp</a>
 </dialog>
 
@@ -115,6 +121,16 @@ const modelCategories = {
 		{ name: 'Sueter abotonado de medio lado', download_url: 'https://www.tejidosmiqueitas.com/wp-content/uploads/2020/09/22.-Abotonado-de-medio-lado-baja-ok-500x600.jpg' },
 		{ name: 'Sueter o jersey', download_url: 'https://www.tejidosmiqueitas.com/wp-content/uploads/2020/05/15.-Jersey-o-sueter-baja-500x600.jpg' },
 		{ name: 'Sueter punto ingles', download_url: 'https://www.tejidosmiqueitas.com/wp-content/uploads/2020/04/12.-Sueter-con-punto-ingles-baja-500x600.jpg' }
+	] },
+	chompas: { title: 'Chompas', folder: 'modelos/chompas', samples: [
+		{ name: 'Cardigan negro con broche de perlas', filename: 'cardigan-negro-broche-perlas.png', download_url: 'modelos/chompas/cardigan-negro-broche-perlas.png', description: 'Cárdigan negro tejido de manga larga, con botones frontales, bolsillos y un broche de perlas decorativo.' },
+		{ name: 'Chompa larga roja con trenzas', filename: 'sueter-rojo-punto-trenzado.png', download_url: 'modelos/chompas/sueter-rojo-punto-trenzado.png', description: 'Chompa larga tejida en color rojo, de diseño cálido y elegante. Destaca por su cuello alto, mangas largas y textura de trenzas o cables tejidos. Su silueta alargada y ligeramente holgada ofrece un estilo cómodo y versátil. Composición del hilo por confirmar.' }
+	] },
+	sombreritos: { title: 'Sombreritos', folder: 'modelos/sombreritos', samples: [
+		{ name: 'Sombreritos decorativos tejidos a mano', filename: 'sombreritos-tejidos-a-mano.png', download_url: 'modelos/sombreritos/sombreritos-tejidos-a-mano.png', description: 'Sombreritos decorativos tejidos a mano en crochet, con ala calada y cinta decorativa. Ideales para personalizar botellas, recuerdos, celebraciones y eventos especiales. Disponibles en diferentes colores; composición del hilo por confirmar.' }
+	] },
+	aretes: { title: 'Aretes tejidos', folder: 'modelos/aretes', samples: [
+		{ name: 'Catálogo de aretes tejidos a mano', filename: 'catalogo-aretes-tejidos-a-mano.png', download_url: 'modelos/aretes/catalogo-aretes-tejidos-a-mano.png', description: 'Catálogo de aretes tejidos a mano. Consulta por WhatsApp los diseños, colores y disponibilidad.' }
 	] }
 };
 const modelExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
@@ -141,6 +157,7 @@ function openModel(model) {
 	document.getElementById('viewer-image').src = model.image;
 	document.getElementById('viewer-image').alt = model.name;
 	document.getElementById('viewer-title').textContent = model.name;
+	document.getElementById('viewer-description').textContent = model.description || '';
 	document.getElementById('viewer-order').href = `https://wa.me/51979753574?text=${encodeURIComponent(`Hola, quisiera consultar por el tejido: ${model.name}`)}`;
 	viewer.showModal();
 }
@@ -148,7 +165,9 @@ function openModel(model) {
 function renderModels(files) {
 	gallery.replaceChildren();
 	for (const file of files) {
-		const name = modelName(file.name);
+		const name = file.filename ? file.name : (file.type === 'file' ? modelName(file.name) : file.name);
+		const filename = file.filename || file.name;
+		const imageUrl = file.download_url || filename;
 		const card = document.createElement('article');
 		card.className = 'model-card';
 		const openButton = document.createElement('button');
@@ -156,15 +175,21 @@ function renderModels(files) {
 		openButton.type = 'button';
 		openButton.setAttribute('aria-label', `Ver modelo ${name}`);
 		const image = document.createElement('img');
-		image.src = file.download_url;
-		image.alt = '';
+		image.src = imageUrl;
+		image.alt = name;
 		image.loading = 'lazy';
 		const label = document.createElement('span');
 		label.className = 'model-name';
 		label.textContent = name;
 		openButton.append(image, label);
-		openButton.addEventListener('click', () => openModel({ name, image: file.download_url }));
+		openButton.addEventListener('click', () => openModel({ name, image: imageUrl, description: file.description }));
 		card.append(openButton);
+		if (file.description) {
+			const description = document.createElement('p');
+			description.className = 'model-description';
+			description.textContent = file.description;
+			card.append(description);
+		}
 		gallery.append(card);
 	}
 }
@@ -192,7 +217,8 @@ async function selectCategory(category) {
 	}
 	if (requestId !== galleryRequest) return;
 	galleryStatus.textContent = '';
-	const files = [...selected.samples, ...uploaded];
+	const sampleNames = new Set(selected.samples.map(file => file.filename).filter(Boolean));
+	const files = [...selected.samples, ...uploaded.filter(file => !sampleNames.has(file.name))];
 	if (files.length) renderModels(files);
 	else showEmptyGallery(selected.folder);
 }
